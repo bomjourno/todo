@@ -15,8 +15,10 @@ export const TodoForm = ({ addTodo }: TodoFormProps) => {
 
   const handleKeyPress = (evt: React.KeyboardEvent) => {
     if (evt.key === 'Enter') {
-      addTodo(value)
-      setValue('')
+      if (value.length !== 0) {
+        addTodo(value)
+        setValue('')
+      }
     }
   }
 

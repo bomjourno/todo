@@ -6,4 +6,41 @@
   padding: 0;
   margin: 0 auto;
   list-style-type: none;
+
+  &__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 2.5rem;
+    margin-bottom: 40px;
+    padding: 0 0.8rem;
+    font-size: 12px;
+    color: gray;
+    background-color: #fff;
+    box-shadow: rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+  }
+
+  &__footer-sort {
+    padding: 2px 6px;
+    font-size: inherit;
+    color: inherit;
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+  }
+
+  &__footer-clear {
+    padding: 0;
+    padding-left: 10px;
+    font-size: inherit;
+    color: inherit;
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+  }
+}
+
+.active {
+  border: 1px solid #909090;
+  border-radius: 4px;
 }

@@ -28,8 +28,8 @@ function App() {
     )
   }
 
-  const removeHandler = (id: number) => {
-    console.log(id)
+  const removeHandler = () => {
+    setTodos((prev) => prev.filter((todo) => todo.completed == false))
   }
 
   return (
