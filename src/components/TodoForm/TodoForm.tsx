@@ -15,9 +15,11 @@ export const TodoForm = ({ addTodo }: TodoFormProps) => {
 
   const handleKeyPress = (evt: React.KeyboardEvent) => {
     if (evt.key === 'Enter') {
-      if (value.length !== 0) {
+      if (value.length > 0) {
         addTodo(value)
         setValue('')
+      } else {
+        alert('Enter a value')
       }
     }
   }
@@ -38,7 +40,7 @@ export const TodoForm = ({ addTodo }: TodoFormProps) => {
           ['todoform__error-enabled']: value.length == 35,
         })}
       >
-        Должно быть не более 35 символов
+        Max symbols is 35
       </span>
     </div>
   )

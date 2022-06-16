@@ -11,7 +11,7 @@ interface TodoListProps {
 }
 
 export const TodoList = ({ todos, onToggle, onRemove }: TodoListProps) => {
-  const [sortedBy, setSortedBy] = useState<string>('')
+  const [sortedBy, setSortedBy] = useState<string>('All')
   const completedTodos = todos.filter((todo) => todo.completed === false)
 
   const getStatusOfProgress = (itemsLeft: number, possible_text: string[]) => {
