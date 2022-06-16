@@ -15,14 +15,32 @@ function App() {
       completed: false,
     }
     setTodos((prevVal) => [newTodo, ...prevVal])
-    console.log(todos)
+  }
+
+  const toggleHandler = (id: number) => {
+    setTodos(
+      todos.map((todo) => {
+        if (todo.id === id) {
+          todo.completed = !todo.completed
+        }
+        return todo
+      }),
+    )
+  }
+
+  const removeHandler = (id: number) => {
+    console.log(id)
   }
 
   return (
     <div className='main'>
       <Header />
       <TodoForm addTodo={addTodo} />
-      <TodoList todos={todos} />
+      <TodoList
+        todos={todos}
+        onRemove={removeHandler}
+        onToggle={toggleHandler}
+      />
     </div>
   )
 }

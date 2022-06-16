@@ -1,16 +1,28 @@
 import React from 'react'
-import { ITodo } from '../../types/types'
 import './Todo.scss'
+import classNames from 'classnames'
+import { ITodo } from '../../types/types'
 
 interface TodoProps {
   todo: ITodo
+  onToggle: (id: number) => void
 }
 
-export const Todo = ({ todo }: TodoProps) => {
+export const Todo = ({ todo, onToggle }: TodoProps) => {
   return (
-    <li className='todo'>
-      <input type='checkbox' />
-      <span>{todo.title}</span>
+    <li
+      className={classNames('todo', {
+        todo__completed: todo.completed,
+      })}
+    >
+      <label className='todo__label'>
+        <input
+          type='checkbox'
+          checked={todo.completed}
+          onChange={() => onToggle(todo.id)}
+        />
+        <span className='todo__title'>{todo.title}</span>
+      </label>
     </li>
   )
 }
