@@ -1,6 +1,5 @@
 .main {
-  max-width: 1280px;
-  min-width: 320px;
+  width: clamp(360px, 20%, 30%);
   margin: 0 auto;
   font-family: 'Roboto', sans-serif;
 }
