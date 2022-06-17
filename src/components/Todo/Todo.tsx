@@ -14,8 +14,9 @@ export const Todo = ({ todo, onToggle }: TodoProps) => {
       className={classNames('todo', {
         todo__completed: todo.completed,
       })}
+      data-testid='todo'
     >
-      <label className='todo__label'>
+      <label className='todo__label' data-testid='label'>
         <input
           type='checkbox'
           checked={todo.completed}

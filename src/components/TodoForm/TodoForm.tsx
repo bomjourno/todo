@@ -34,6 +34,7 @@ export const TodoForm = ({ addTodo }: TodoFormProps) => {
         type='text'
         placeholder='What needs to be done?'
         maxLength={35}
+        data-testid='input'
       />
       <span
         className={classNames('todoform__error', {

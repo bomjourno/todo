@@ -59,6 +59,7 @@ export const TodoList = ({ todos, onToggle, onRemove }: TodoListProps) => {
                 active: sortedBy == 'All',
               })}
               onClick={() => setSortedBy('All')}
+              data-testid='All'
             >
               All
             </button>
@@ -67,6 +68,7 @@ export const TodoList = ({ todos, onToggle, onRemove }: TodoListProps) => {
                 active: sortedBy == 'Active',
               })}
               onClick={() => setSortedBy('Active')}
+              data-testid='Active'
             >
               Active
             </button>
@@ -75,11 +77,16 @@ export const TodoList = ({ todos, onToggle, onRemove }: TodoListProps) => {
                 active: sortedBy == 'Completed',
               })}
               onClick={() => setSortedBy('Completed')}
+              data-testid='Completed'
             >
               Completed
             </button>
           </div>
-          <button className='todolist__footer-clear' onClick={onRemove}>
+          <button
+            className='todolist__footer-clear'
+            onClick={onRemove}
+            data-testid='Clear completed'
+          >
             Clear completed
           </button>
         </div>
